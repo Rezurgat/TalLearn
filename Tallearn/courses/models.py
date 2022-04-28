@@ -5,6 +5,8 @@ from django.utils import timezone
 class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
+    image = models.ImageField(upload_to='category_articles/')
+    description = models.TextField()
     create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
