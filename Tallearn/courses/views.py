@@ -10,5 +10,6 @@ class CategoryListView(ListView):
     def get_queryset(self):
         return Category.objects.all()
 
+
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'base.html')
