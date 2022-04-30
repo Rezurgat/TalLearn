@@ -25,8 +25,8 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
-
-	<!-- Animate.css -->
+	
+		<!-- Animate.css -->
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
@@ -59,9 +59,12 @@
 	</head>
 	<body>
 
+
 	<div class="colorlib-loader"></div>
 
+{% block content %}
 	<div id="page">
+
 		<nav class="colorlib-nav" role="navigation">
 			<div class="upper-menu">
 				<div class="container">
@@ -116,7 +119,7 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/img_bg_1.jpg);">
+			   	<li style="background-image: url(default_img/classes-1.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -129,7 +132,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_2.jpg);">
+			   	<li style="background-image: url(default_img/classes-1.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -142,7 +145,7 @@
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_3.jpg);">
+			   	<li style="background-image: url(default_img/classes-1.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -777,9 +780,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</footer>
 	</div>
-
+{% endblock content %}
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
 	</div>
 
 	<!-- jQuery -->
@@ -804,5 +808,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<!-- Main -->
 	<script src="{% static 'js/main.js' %}"></script>
 
-	 </body>
+
+
+
+
+
+
+
+
+
+	</body>
 </html>
+
