@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
@@ -13,7 +12,7 @@
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Courses</h1>
-				   					<h2><span><a href="index.html">Home</a> | Courses</span></h2>
+				   					<h2><span><a href="index.html">Home</a> | Categories </span></h2>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -32,17 +31,18 @@
 					</div>
 				</div>
 				<div class="row">
-					{% for category in category_list %}
+					{% for course in course_list %}
 					<div class="col-md-4 animate-box">
 						<div class="classes">
-							<div class="classes-img" style="background-image: url({{ category.image.url }});">
+							<div class="classes-img" style="background-image: url({{ course.image.url }});">
 							</div>
 							<div class="desc">
-								<h3>{{ category.name }}</h3>
-								<p>{{ category.description }}</p>
-								<p><a href="{{ category.slug }}" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
+								<h3>{{ course.title }}</h3>
+								<p>{{ course.description }}</p>
+								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
 							</div>
 						</div>
+
 					</div>
 					{% endfor %}
 
