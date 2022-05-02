@@ -31,6 +31,9 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['title']
+
 
 class Comment(models.Model):
     firstname = models.CharField(max_length=50)
