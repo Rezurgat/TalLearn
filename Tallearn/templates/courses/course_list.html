@@ -10,10 +10,12 @@
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Courses</h1>
-				   					<h2><span><a href="index.html">Home</a> | Categories </span></h2>
+				   				{% for slug in course_list %}
+								<div class="slider-text-inner text-center">
+				   					<h1>Categories</h1>
+				   					<h2><span><a href="index.html">Home</a> | Categories | {{ slug.head_slug }}  </span></h2>
 				   				</div>
+								{% endfor %}
 				   			</div>
 				   		</div>
 			   		</div>
@@ -25,10 +27,12 @@
 		<div class="colorlib-classes">
 			<div class="container">
 				<div class="row">
+					{% for text in course_list %}
 					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Our Classes</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
+						<h2>{{ text.head_title }}</h2>
+						<p>{{ text.head_description }}</p>
 					</div>
+					{% endfor %}
 				</div>
 				<div class="row">
 					{% for course in course_list %}

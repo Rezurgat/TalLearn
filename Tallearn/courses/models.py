@@ -17,6 +17,9 @@ class Category(models.Model):
 
 
 class Course(models.Model):
+    head_slug = models.CharField(max_length=50, default='', null=True, blank=True)
+    head_title = models.CharField(max_length=100, default='', null=True, blank=True)
+    head_description = models.TextField(default='', null=True, blank=True)
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     image = models.ImageField(upload_to='course_articles/')
