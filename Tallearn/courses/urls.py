@@ -6,5 +6,6 @@ from .import views
 urlpatterns = [
    path('category/', views.CategoryListView.as_view(), name='category_list'),
    path('category/<slug:slug>/', views.CourseListView.as_view(), name='course_list'),
+   path('category/<slug:slug>/<slug:course_slug>/', views.CourseDetailView.as_view(), name='course_detail'),
    path('', views.home)
 ]

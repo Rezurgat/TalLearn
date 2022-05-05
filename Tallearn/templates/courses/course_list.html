@@ -43,7 +43,7 @@
 							<div class="desc">
 								<h3>{{ course.title }}</h3>
 								<p>{{ course.description }}</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
+								<p><a href="{{ course.get_absolute_url }}" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
 							</div>
 						</div>
 
@@ -86,8 +86,9 @@
 				</div>
 			</div>
 		</div>
+
 {% endblock content %}
-	</div>
+
 
 
 
