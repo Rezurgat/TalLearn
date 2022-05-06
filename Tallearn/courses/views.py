@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from courses.models import Category, Course
+from courses.forms import CommentForm
 
 
 class CategoryListView(ListView):
@@ -22,6 +23,11 @@ class CourseDetailView(DetailView):
     model = Course
     context_object_name = 'course'
     slug_url_kwarg = 'course_slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        return context
 
 
 def home(request):
