@@ -25,10 +25,8 @@ class About(models.Model):
 class Social(models.Model):
     name = models.CharField(max_length=50)
     link = models.URLField()
-    about = models.ForeignKey(
-        About,
-        related_name='social',
-        on_delete=models.CASCADE)
+    about = models.ForeignKey(About, related_name='social', on_delete=models.CASCADE)
+
 
 class Feedback(models.Model):
     firstname = models.CharField(max_length=100)
