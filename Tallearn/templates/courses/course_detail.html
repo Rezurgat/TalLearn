@@ -42,7 +42,7 @@
 						</div>
 						<div class="row row-pb-lg animate-box">
 							<div class="col-md-12">
-								<h2 class="colorlib-heading-2">23 Comments</h2>
+								<h2 class="colorlib-heading-2">{{ course.get_comments.count }} Comments</h2>
 								{% for comment in course.get_comments %}
 								<div class="review">
 						   		<div class="user-img" style="background-image: url()"></div>

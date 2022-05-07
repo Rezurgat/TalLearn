@@ -5,6 +5,10 @@ from courses.models import Category, Course, Comment
 from courses.forms import CommentForm
 
 
+def home(request):
+    return render(request, 'base.html')
+
+
 class CategoryListView(ListView):
     model = Category
 
@@ -43,5 +47,3 @@ class CreateComment(CreateView):
         return self.object.course.get_absolute_url()
 
 
-def home(request):
-    return render(request, 'base.html')
