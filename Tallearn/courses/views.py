@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
-from courses.models import Category, Course
+from courses.models import Category, Course, Comment
 from courses.forms import CommentForm
 
 
@@ -28,6 +28,19 @@ class CourseDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['form'] = CommentForm()
         return context
+
+
+class CreateComment(CreateView):
+    model = Comment
+    form_class = CommentForm
+
+    def form_valid(self, form):
+        form.instance.course_id = self.kwargs.get('pk')
+        self.object = form.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return self.object.course.get_absolute_url()
 
 
 def home(request):
