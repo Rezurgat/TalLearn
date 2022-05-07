@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(images/img_bg_2.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>About Us</h1>
+				   					<h2><span><a href="index.html">Home</a> | About</span></h2>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		
+		<div id="colorlib-about" class="colorlib-light-grey">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-10 col-md-offset-1 text-center animate-box">
+						<div class="about-wrap">
+							<div class="heading-2">
+								<h2>What is Tallearn ?</h2>
+							</div>
+							<p>test</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-trainers">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Our Experienced Instructors</h2>
+						<p>test</p>
+					</div>
+				</div>
+				<div class="row">
+					{% for item in about_list %}
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url({{ item.photo.url }})"></div>
+							<div class="desc">
+								<h3>{{ item.firstname }} {{item.lastname}}</h3>
+								<span><p>{{ item.proficiency_level }}</p></span>
+							</div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
+							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	
+		<div id="colorlib-subscribe" class="subs-img" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Subscribe Newsletter</h2>
+						<p>Subscribe our newsletter and get latest update</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="row">
+							<div class="col-md-12">
+							<form class="form-inline qbstp-header-subscribe">
+								<div class="col-three-forth">
+									<div class="form-group">
+										<input type="text" class="form-control" id="email" placeholder="Enter your email">
+									</div>
+								</div>
+								<div class="col-one-third">
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary">Subscribe Now</button>
+									</div>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}
+

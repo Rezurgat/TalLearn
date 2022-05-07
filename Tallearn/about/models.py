@@ -4,15 +4,11 @@ from django.utils import timezone
 
 
 class About(models.Model):
-    head_title = models.CharField(max_length=100, null=True, blank=True)
-    head_description = RichTextField(null=True, blank=True)
-    head_teachers = models.CharField(max_length=100, null=True, blank=True)
-    teachers_description = RichTextField(null=True, blank=True)
     photo = models.FileField(upload_to='about/')
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
-    proficiency_level = RichTextField()
-    bio = RichTextField()
+    proficiency_level = models.CharField(max_length=100)
+    bio = models.CharField(max_length=100)
     create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
