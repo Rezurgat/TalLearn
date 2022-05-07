@@ -15,4 +15,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(models.Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['firstname', 'lastname', 'create_at']
+    list_display = ['firstname', 'lastname','email', 'create_at']

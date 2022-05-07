@@ -37,6 +37,9 @@ class Course(models.Model):
     def get_absolute_url(self):
         return reverse('course_detail', kwargs={'slug': self.category.slug, 'course_slug': self.slug})
 
+    def get_comments(self):
+        return self.comment.all()
+
 
 class Comment(models.Model):
     firstname = models.CharField(max_length=50)
@@ -51,4 +54,6 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['create_at']
+
+
 
