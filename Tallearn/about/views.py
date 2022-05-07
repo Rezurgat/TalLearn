@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from about.models import About
+
+
+class AboutListView(ListView):
+    model = About
+
+    def get_queryset(self):
+        return About.objects.all()
+
