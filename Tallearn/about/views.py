@@ -1,7 +1,6 @@
 from django.views.generic import ListView
 
-from about.models import About
-
+from about.models import About, Contact
 
 
 class AboutListView(ListView):
@@ -11,5 +10,9 @@ class AboutListView(ListView):
         return About.objects.all()
 
 
+class ContactListView(ListView):
+    model = Contact
 
-c
+    def get_queryset(self):
+        return Contact.objects.all()
+
