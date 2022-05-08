@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 
 		<aside id="colorlib-hero">
@@ -54,8 +55,8 @@
 								<h3>{{ item.firstname }} {{item.lastname}}</h3>
 								<span><p>{{ item.proficiency_level }}</p></span>
 							</div>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
-							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
+							<p>{{ item.bio }}</p>
+							<p class="social"><a href="{{ item.link_instagram }}">Instagram</a><a href="{{ item.link_telegram }}">Telegram</a><a href="{{ item.link_vk }}">Vkontakte</a></p>
 						</div>
 					</div>
 					{% endfor %}

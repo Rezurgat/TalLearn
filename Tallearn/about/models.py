@@ -1,5 +1,4 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 from django.utils import timezone
 
 
@@ -9,6 +8,9 @@ class About(models.Model):
     lastname = models.CharField(max_length=100)
     proficiency_level = models.CharField(max_length=100)
     bio = models.CharField(max_length=100)
+    link_telegram = models.URLField(default='')
+    link_instagram = models.URLField(default='')
+    link_vk = models.URLField(default='')
     create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -16,12 +18,6 @@ class About(models.Model):
 
     class Meta:
         ordering = ['create_at']
-
-
-class Social(models.Model):
-    name = models.CharField(max_length=50)
-    link = models.URLField()
-    about = models.ForeignKey(About, related_name='social', on_delete=models.CASCADE)
 
 
 class Feedback(models.Model):
