@@ -23,7 +23,7 @@ class About(models.Model):
 class Feedback(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
-    email = models.CharField(max_length=100, default='')
+    email_or_phone = models.CharField(max_length=100, default='')
     message = models.TextField(max_length=256)
     create_at = models.DateTimeField(default=timezone.now)
 
