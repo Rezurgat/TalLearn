@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import About, Social
+from .models import About
 
 
 @admin.register(About)
@@ -9,4 +9,4 @@ class AboutAdmin(admin.ModelAdmin):
     list_display_links = ('firstname',)
 
 
-admin.site.register(Social)
+
