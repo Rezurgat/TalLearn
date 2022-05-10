@@ -18,6 +18,3 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ['title', 'author', 'create_at', 'format']
 
 
-@admin.register(models.Comment)
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ['firstname', 'lastname', 'email', 'create_at']

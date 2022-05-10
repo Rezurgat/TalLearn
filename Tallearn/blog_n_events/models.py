@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -30,6 +31,9 @@ class Post(models.Model):
     class Meta:
         ordering = ['create_at']
 
+    def get_absolute_url(self):
+        return reverse('post_detail', kwargs={'slug': self.category.slug, 'post_slug': self.slug})
+
 
 class Event(models.Model):
     title = models.CharField(max_length=50)
@@ -41,21 +45,6 @@ class Event(models.Model):
 
     def __str__(self):
         return f'{self.title}  {self.author} - ({self.create_at})'
-
-    class Meta:
-        ordering = ['create_at']
-
-
-class Comment(models.Model):
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50, null=True, blank=True)
-    comment = models.TextField(max_length=256)
-    create_at = models.DateTimeField(auto_now_add=True)
-    post = models.ForeignKey(Post, related_name='comment', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.firstname}  {self.lastname} - ({self.email})'
 
     class Meta:
         ordering = ['create_at']
