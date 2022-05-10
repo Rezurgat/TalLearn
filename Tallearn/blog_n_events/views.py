@@ -1,6 +1,6 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView
 
-from blog_n_events.models import Post, Event, Comment, Category
+from blog_n_events.models import Post, Event, Category
 
 
 class CategoryListView(ListView):
@@ -14,7 +14,8 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.all()
+        return Post.objects.filter(category__slug=self.kwargs.get('slug')).select_related('category')
+
 
 class PostDetailView(DetailView):
     model = Post
