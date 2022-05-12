@@ -11,8 +11,8 @@
 			   			<div class="row">
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1>Upcoming Events</h1>
-				   					<h2><span>Home | Events</span></h2>
+				   					<h1>{{ event.title }}</h1>
+				   					<h2><span>Home | Events | {{ event.title }}</span></h2>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -21,29 +21,26 @@
 			  	</ul>
 		  	</div>
 		</aside>
-		
-		<div class="colorlib-event">
+
+		<div class="colorlib-classes">
 			<div class="container">
 				<div class="row">
-					{% for event in event_list %}
-					<div class="col-md-4 animate-box">
-						<div class="event-entry">
-							<div class="desc">
-								<p class="meta"><span class="day">{{ event.create_at|date:"d" }}</span><span class="month">{{ event.create_at|date:"M" }}</span></p>
-								<p class="organizer"><span>Organized by:</span> <span>{{ event.author }}</span></p>
-								<h2><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h2>
-							</div>
-							<div class="location">
-								<span class="icon"><i class="icon-map"></i></span>
-								<p>{{ event.format }}</p>
+					<div class="col-md-8 col-md-offset-2">
+						<div class="row row-pb-lg">
+							<div class="col-md-12 animate-box">
+								<div class="classes class-single">
+									<div class="desc desc2">
+										<h3><a href="#">{{ event.title }}</a></h3>
+										<p>{{ event.description }}</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					{% endfor  %}
 				</div>
 			</div>
 		</div>
-	
+
 		<div id="colorlib-subscribe" class="subs-img" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">

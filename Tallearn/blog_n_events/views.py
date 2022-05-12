@@ -36,3 +36,10 @@ class EventListView(ListView):
         return Event.objects.all()
 
 
+class EventDetailView(DetailView):
+    model = Event
+    context_object_name = 'event'
+    slug_url_kwarg = 'event_slug'
+
+
+

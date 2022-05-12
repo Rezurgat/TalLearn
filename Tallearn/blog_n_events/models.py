@@ -38,7 +38,7 @@ class Post(models.Model):
 class Event(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
-    create_at = models.DateTimeField(auto_now_add=True)
+    create_at = models.DateTimeField()
     author = models.CharField(max_length=50)
     format = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, default='')
@@ -49,4 +49,6 @@ class Event(models.Model):
     class Meta:
         ordering = ['create_at']
 
+    def get_absolute_url(self):
+        return reverse('event_detail', kwargs={'event_slug': self.slug})
 
