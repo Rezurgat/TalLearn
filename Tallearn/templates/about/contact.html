@@ -59,19 +59,15 @@
 									{{ form.lastname }}
 								</div>
 							</div>
-
 							<div class="row form-group">
 								<div class="col-md-12">
 									{{ form.email_or_phone }}
 								</div>
 							</div>
-
 							<div class="row form-group">
 								<div class="col-md-12">
 									{{ form.message }}
 								</div>
-
-
 								{% if messages %}
      								{% for message in messages %}
          								<div class="text-center alert alert-{{ message.tags }}">
@@ -79,8 +75,6 @@
 										</div>
      								{% endfor %}
  								{% endif %}
-
-
 							</div>
 							<div class="form-group">
 								<input type="submit" value="Send Message" class="btn btn-primary">
