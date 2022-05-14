@@ -17,7 +17,6 @@ class PostListView(ListView):
         return Post.objects.filter(category__slug=self.kwargs.get('slug')).select_related('category')
 
 
-
 class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'
