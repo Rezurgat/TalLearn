@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 
 from blog_n_events.models import Post, Event, Category
@@ -15,6 +16,9 @@ class PostListView(ListView):
 
     def get_queryset(self):
         return Post.objects.filter(category__slug=self.kwargs.get('slug')).select_related('category')
+
+    def get_ref(self):
+        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER', '/'))
 
 
 class PostDetailView(DetailView):
