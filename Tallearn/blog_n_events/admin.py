@@ -10,7 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(models.Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'create_at']
+    list_display = ['title', 'author', 'category', 'create_at']
 
 
 @admin.register(models.Event)

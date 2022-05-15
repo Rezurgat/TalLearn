@@ -8,17 +8,18 @@ from about.models import About, Contact
 from blog_n_events.models import Event, Post
 
 
-
 class HomeView(ListView):
+    context_object_name = 'home_list'
     model = Category
     template_name = 'courses/home.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['about_list'] = About.objects.all()
-        context['event_list'] = Event.objects.all()
-        context['blog_category_list'] = Post.objects.all()
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['about'] = About.objects.all()
+        context['event'] = Event.objects.order_by('-create_at')[0:3]
+        context['blog'] = Post.objects.order_by('-create_at')[0:4]
         context['contact'] = Contact.objects.all()
+        context['course'] = Course.objects.all()
 
         return context
 
