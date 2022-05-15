@@ -203,78 +203,19 @@
 					</div>
 				</div>
 				<div class="row">
+					{% for category in home_list %}
 					<div class="col-md-4 animate-box">
 						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-1.jpg);">
-								<span class="price text-center"><small>$450</small></span>
+							<div class="classes-img" style="background-image: url({{ category.image.url }});">
 							</div>
 							<div class="desc">
-								<h3><a href="#">Developing Mobile Apps</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
+								<h3>{{ category.name }}</h3>
+								<p>{{ category.description }}</p>
+								<p><a href="{% url 'course_list' category.slug %}" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-2.jpg);">
-								<span class="price text-center"><small>$450</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Convert PSD to HTML</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-3.jpg);">
-								<span class="price text-center"><small>$450</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Convert HTML to WordPress</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-4.jpg);">
-								<span class="price text-center"><small>$450</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Developing Mobile Apps</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-5.jpg);">
-								<span class="price text-center"><small>$450</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Learned Smoke Effects</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(images/classes-6.jpg);">
-								<span class="price text-center"><small>$450</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Convert HTML to WordPress</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
@@ -288,45 +229,17 @@
 					</div>
 				</div>
 				<div class="row">
+					{% for item in about %}
 					<div class="col-md-3 col-sm-3 animate-box">
 						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/person1.jpg)"></div>
+							<div class="trainer-img" style="background-image: url({{ item.photo.url }})"></div>
 							<div class="desc">
-								<h3>Olivia Young</h3>
-								<span>Teacher</span>
+								<h3>{{ item.firstname }} {{ item.lastname}}</h3>
+								<span>{{ item.proficiency_level }}</span>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/person2.jpg)"></div>
-							<div class="desc">
-								<h3>Daniel Anderson</h3>
-								<span>Professor</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/person3.jpg)"></div>
-							<div class="desc">
-								<h3>David Brook</h3>
-								<span>Teacher</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(images/person4.jpg)"></div>
-							<div class="desc">
-								<h3>Brigeth Smith</h3>
-								<span>Teacher</span>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
@@ -344,45 +257,21 @@
 					</div>
 					<div class="half">
 						<div class="row">
+							{% for event in event %}
 							<div class="col-md-12 animate-box">
 								<div class="event-entry">
 									<div class="desc">
-										<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
-										<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
-										<h2><a href="event.html">We Held Free Training for Basic Programming</a></h2>
+										<p class="meta"><span class="day">{{ event.create_at|date:"d" }}</span><span class="month">{{ event.create_at|date:"M" }}</span></p>
+										<p class="organizer"><span>Organized by:</span> <span>{{ event.author }}</span></p>
+										<h2><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h2>
 									</div>
 									<div class="location">
 										<span class="icon"><i class="icon-map"></i></span>
-										<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+										<p>{{ event.format }}</p>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-12 animate-box">
-								<div class="event-entry">
-									<div class="desc">
-										<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
-										<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
-										<h2><a href="event.html">You're Invited 1st Anniversary of Eskwela</a></h2>
-									</div>
-									<div class="location">
-										<span class="icon"><i class="icon-map"></i></span>
-										<p>291 South 21th Street, Suite 721 New York NY 10016</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-12 animate-box">
-								<div class="event-entry">
-									<div class="desc">
-										<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
-										<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
-										<h2><a href="event.html">Practice Workshop 2018</a></h2>
-									</div>
-									<div class="location">
-										<span class="icon"><i class="icon-map"></i></span>
-										<p>291 South 21th Street, Suite 721 New York NY 10016</p>
-									</div>
-								</div>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>

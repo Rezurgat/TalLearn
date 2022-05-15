@@ -13,7 +13,7 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        ordering = ['name']
+        ordering = ['-create_at']
 
 
 class Post(models.Model):
@@ -47,7 +47,7 @@ class Event(models.Model):
         return f'{self.title}  {self.author} - ({self.create_at})'
 
     class Meta:
-        ordering = ['create_at']
+        ordering = ['-create_at']
 
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'event_slug': self.slug})
