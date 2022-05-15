@@ -1,13 +1,11 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 
 from courses.models import Category, Course, Comment
 from courses.forms import CommentForm
 
-from about.models import About
+from about.models import About, Contact
 
 from blog_n_events.models import Event, Post
-
 
 
 
@@ -20,6 +18,7 @@ class HomeView(ListView):
         context['about_list'] = About.objects.all()
         context['event_list'] = Event.objects.all()
         context['blog_category_list'] = Post.objects.all()
+        context['contact'] = Contact.objects.all()
 
         return context
 
