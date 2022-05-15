@@ -4,9 +4,24 @@ from django.views.generic import ListView, DetailView, CreateView
 from courses.models import Category, Course, Comment
 from courses.forms import CommentForm
 
+from about.models import About
 
-def home(request):
-    return render(request, 'base.html')
+from blog_n_events.models import Event, Post
+
+
+
+
+class HomeView(ListView):
+    model = Category
+    template_name = 'courses/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['about_list'] = About.objects.all()
+        context['event_list'] = Event.objects.all()
+        context['blog_category_list'] = Post.objects.all()
+
+        return context
 
 
 class CategoryListView(ListView):
