@@ -13,7 +13,10 @@
 
 				   				<div class="slider-text-inner text-center">
 				   					<h1>{{ course.title }}</h1>
-				   					<h2><span>Home | Categories | {{course_list.first.category.name}} | {{ course.title }}</span>
+				   					<h2><span><a href="/"> Home </a> |
+										<a href="{% url 'category_list' %}"> Categories </a> |
+										<a href="{% url 'course_list' course_list.first.category.slug %}"> {{course_list.first.category.name}} </a> |
+										{{ course.title }} </span></h2>
 				   				</div>
 
 				   			</div>
