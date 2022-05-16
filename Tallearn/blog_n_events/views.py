@@ -5,6 +5,7 @@ from blog_n_events.models import Post, Event, Category
 
 class CategoryListView(ListView):
     model = Category
+    context_object_name = 'blog_category_list'
 
     def get_queryset(self):
         return Category.objects.all()
