@@ -10,15 +10,13 @@
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-
 				   				<div class="slider-text-inner text-center">
 				   					<h1>{{ course.title }}</h1>
 				   					<h2><span><a href="/"> Home </a> |
 										<a href="{% url 'category_list' %}"> Categories </a> |
-										<a href="{% url 'course_list' course_list.first.category.slug %}"> {{course_list.first.category.name}} </a> |
+										<a href="{{ request.META.HTTP_REFERER }}">  {{course.get_category_name}} </a> |
 										{{ course.title }} </span></h2>
 				   				</div>
-
 				   			</div>
 				   		</div>
 			   		</div>

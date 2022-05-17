@@ -14,7 +14,7 @@
 				   					<h1>{{ post.title }}</h1>
 				   					<h2><span><a href="/"> Home </a> |
 										<a href="{% url 'blog_category_list' %}"> Blog </a> |
-										<a href="{% url 'post_list' post_list.first.category.slug %}">{{post_list.first.category.name}} </a> |
+										<a href="{{ request.META.HTTP_REFERER }}"> {{post.get_category_name}} </a> |
 										{{ post.title }} </span></h2>
 				   				</div>
 				   			</div>

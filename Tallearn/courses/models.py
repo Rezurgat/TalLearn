@@ -16,6 +16,9 @@ class Category(models.Model):
     class Meta:
         ordering = ['name']
 
+    def get_category_url(self):
+        return reverse('course_list', kwargs={'slug': self.category.slug})
+
 
 class Course(models.Model):
     head_slug = models.CharField(max_length=50, default='', null=True, blank=True)
@@ -40,6 +43,8 @@ class Course(models.Model):
     def get_comments(self):
         return self.comment.all()
 
+    def get_category_name(self):
+        return self.category.name
 
 class Comment(models.Model):
     firstname = models.CharField(max_length=50)
