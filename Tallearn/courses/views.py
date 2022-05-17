@@ -17,7 +17,7 @@ class HomeView(ListView):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['about'] = About.objects.all()
         context['event'] = Event.objects.order_by('-create_at')[0:3]
-        context['blog'] = Post.objects.order_by('-create_at')[0:4]
+        context['blog'] = Post.objects.order_by('-create_at')[0:3]
         context['contact'] = Contact.objects.all()
         context['course'] = Course.objects.all()
 
