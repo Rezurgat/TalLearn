@@ -34,6 +34,8 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={'slug': self.category.slug, 'post_slug': self.slug})
 
+    def get_category_name(self):
+        return self.category.name
 
 class Event(models.Model):
     title = models.CharField(max_length=50)

@@ -17,7 +17,7 @@ class HomeView(ListView):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['about'] = About.objects.all()
         context['event'] = Event.objects.order_by('-create_at')[0:3]
-        context['blog'] = Post.objects.order_by('-create_at')[0:3]
+        context['blog'] = Post.objects.order_by('-create_at')[0:4]
         context['contact'] = Contact.objects.all()
         context['course'] = Course.objects.all()
 
@@ -47,6 +47,7 @@ class CourseDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['form'] = CommentForm()
         context['course_list'] = Course.objects.all()
+        context['category'] = Category.objects.all()
         return context
 
 
