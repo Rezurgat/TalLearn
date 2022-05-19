@@ -35,7 +35,7 @@ class Feedback(models.Model):
     create_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f'{self.firstname}  {self.lastname} - ({self.email})'
+        return f'{self.firstname}  {self.lastname} - ({self.email_or_phone})'
 
     class Meta:
         ordering = ['create_at']
