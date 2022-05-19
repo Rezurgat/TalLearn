@@ -46,6 +46,9 @@ class Course(models.Model):
     def get_category_name(self):
         return self.category.name
 
+    def get_category_slug(self):
+        return self.category.slug
+
 
 class Comment(models.Model):
     firstname = models.CharField(max_length=50)

@@ -5,7 +5,7 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/img_bg_2.jpg);">
+			   	<li style="background-image: url({{ course.image.url }});">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -14,7 +14,7 @@
 				   					<h1>{{ course.title }}</h1>
 				   					<h2><span><a href="/"> Home </a> |
 										<a href="{% url 'category_list' %}"> Categories </a> |
-										<a href="{{ request.META.HTTP_REFERER }}">  {{course.get_category_name}} </a> |
+										<a href="{% url 'course_list' course.get_category_slug %}">  {{course.get_category_name}} </a> |
 										{{ course.title }} </span></h2>
 				   				</div>
 				   			</div>
@@ -45,7 +45,7 @@
 								<h2 class="colorlib-heading-2">{{ course.get_comments.count }} Comments</h2>
 								{% for comment in course.get_comments %}
 								<div class="review">
-						   		<div class="user-img" style="background-image: url()"></div>
+						   		<div class="user-img" style="background-image: url(/media/background_img/clipart-graduation.png)"></div>
 						   		<div class="desc">
 						   			<h4>
 						   				<span class="text-left">{{ comment.firstname }} {{ comment.lastname }}</span>
