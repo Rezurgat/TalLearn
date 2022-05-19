@@ -59,6 +59,8 @@ class CourseDetailView(DetailView):
         context['form'] = CommentForm()
         context['course_list'] = Course.objects.all()
         context['category'] = Category.objects.all()
+        context['blog'] = Post.objects.order_by('-create_at')[0:3]
+        context['contact'] = Contact.objects.all()
         return context
 
 
