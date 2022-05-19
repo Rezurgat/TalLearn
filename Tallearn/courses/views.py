@@ -43,6 +43,11 @@ class CourseListView(ListView):
     def get_queryset(self):
         return Course.objects.filter(category__slug=self.kwargs.get('slug')).select_related('category')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['blog'] = Post.objects.order_by('-create_at')[0:3]
+        context['contact'] = Contact.objects.all()
+        return context
 
 class CourseDetailView(DetailView):
     model = Course
