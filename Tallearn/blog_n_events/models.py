@@ -37,6 +37,9 @@ class Post(models.Model):
     def get_category_name(self):
         return self.category.name
 
+    def get_category_slug(self):
+        return self.post.slug
+
 class Event(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()

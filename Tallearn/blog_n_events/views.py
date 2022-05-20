@@ -12,12 +12,24 @@ class CategoryListView(ListView):
     def get_queryset(self):
         return Category.objects.all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['blog'] = Post.objects.order_by('-create_at')[0:3]
+        context['contact'] = Contact.objects.all()
+        return context
+
 
 class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
         return Post.objects.filter(category__slug=self.kwargs.get('slug')).select_related('category')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['blog'] = Post.objects.order_by('-create_at')[0:3]
+        context['contact'] = Contact.objects.all()
+        return context
 
 
 class PostDetailView(DetailView):
@@ -28,6 +40,8 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['post_list'] = Post.objects.all()
+        context['blog'] = Post.objects.order_by('-create_at')[0:3]
+        context['contact'] = Contact.objects.all()
         return context
 
 
