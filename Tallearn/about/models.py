@@ -7,7 +7,7 @@ class About(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     proficiency_level = models.CharField(max_length=100)
-    bio = models.CharField(max_length=100)
+    bio = models.TextField(max_length=1000)
     link_telegram = models.URLField(default='')
     link_instagram = models.URLField(default='')
     link_vk = models.URLField(default='')
