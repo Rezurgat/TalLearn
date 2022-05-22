@@ -52,9 +52,9 @@
 							<div class="trainer-img" style="background-image: url({{ item.photo.url }})"></div>
 							<div class="desc">
 								<h3>{{ item.firstname }} {{item.lastname}}</h3>
-								<span><p>{{ item.proficiency_level }}</p></span>
+								<span><p>{{ item.proficiency_level  }}</p></span>
 							</div>
-							<p>{{ item.bio }}</p>
+							<p>{{ item.bio | linebreaks }}</p>
 							<p class="social"><a href="{{ item.link_instagram }}">Instagram</a><a href="{{ item.link_telegram }}">Telegram</a><a href="{{ item.link_vk }}">Vkontakte</a></p>
 						</div>
 					</div>
