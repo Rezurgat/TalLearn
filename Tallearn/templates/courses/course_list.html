@@ -24,10 +24,10 @@
 		<div class="colorlib-classes">
 			<div class="container">
 				<div class="row">
-					{% for text in course_list %}
+					{% for text in category_list %}
 					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>{{ text.head_title }}</h2>
-						<p>{{ text.head_description }}</p>
+						<h2>{{ text.name }}</h2>
+						<p>{{ text.description }}</p>
 					</div>
 					{% endfor %}
 				</div>
@@ -39,7 +39,6 @@
 							</div>
 							<div class="desc">
 								<h3>{{ course.title }}</h3>
-								<p>{{ course.description }}</p>
 								<p><a href="{{ course.get_absolute_url }}" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
 							</div>
 						</div>
