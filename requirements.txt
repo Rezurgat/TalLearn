@@ -1,0 +1,46 @@
+asgiref @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/cf/65/18/1451154a3ac6f8e749a6f7485ce77472fc1b339d4696f7a4cb816ac781/asgiref-3.5.2-py3-none-any.whl
+CacheControl==0.12.11
+cachy==0.3.0
+certifi==2021.10.8
+charset-normalizer==2.0.12
+cleo==0.8.1
+clikit==0.6.2
+crashtest==0.3.1
+distlib==0.3.4
+Django @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/a6/d5/44/a73a4b49c4cbffbdd99a218d4139258260dc4ee675f9541492b8eea759/Django-4.0.5-py3-none-any.whl
+django-ckeditor @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/a3/e5/5a/ac2faee968c8d05053fad6b42b2844a27ba107c3cef2cd1c050fcd2e5e/django_ckeditor-6.4.0-py3-none-any.whl
+django-js-asset @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/1f/ed/3a/68a2eb0f4d50409eef1b9a1fb9b96a39c3e165681694be56616ddc5641/django_js_asset-2.0.0-py3-none-any.whl
+filelock==3.6.0
+flake8 @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/99/5c/01/a49c075bc6dead5c60588c1cd1701f63d614740792c9a09fb133b41d58/flake8-4.0.1-py2.py3-none-any.whl
+html5lib==1.1
+idna==3.3
+importlib-metadata==4.11.3
+keyring==23.5.0
+lockfile==0.12.2
+mccabe @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/96/5e/5f/21ae5296697ca7f94de4da6e21d4936d74029c352a35202e4c339a4253/mccabe-0.6.1-py2.py3-none-any.whl
+msgpack==1.0.3
+packaging==20.9
+pastel==0.2.1
+pexpect==4.8.0
+Pillow @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/7f/9f/18/4bfb765a5d639bf27b3ffde4c1277c9ecb977cd24e8f70391d2f283cd7/Pillow-9.1.1-cp39-cp39-win_amd64.whl
+pkginfo==1.8.2
+platformdirs==2.5.2
+poetry==1.1.13
+poetry-core==1.0.8
+ptyprocess==0.7.0
+pycodestyle @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/80/25/e5/ced4effd2487693e96521aebb353ce58ad0d81417f71c480419ea8f44a/pycodestyle-2.8.0-py2.py3-none-any.whl
+pyflakes @ file:///C:/Users/Admin/AppData/Local/pypoetry/Cache/artifacts/ad/8e/6d/e46117c96aa3e955c40ed2f0d35b29910b0e557e327fbbba17fd8c390c/pyflakes-2.4.0-py2.py3-none-any.whl
+pylev==1.4.0
+pyparsing==3.0.8
+pywin32-ctypes==0.2.0
+requests==2.27.1
+requests-toolbelt==0.9.1
+shellingham==1.4.0
+six==1.16.0
+sqlparse==0.4.2
+tomlkit==0.10.2
+tzdata==2022.1
+urllib3==1.26.9
+virtualenv==20.14.1
+webencodings==0.5.1
+zipp==3.8.0
