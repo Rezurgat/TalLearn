@@ -3,6 +3,7 @@ from django.utils import timezone
 
 
 class About(models.Model):
+    """ Модель для занесения в базу преподавателя(ФИО, языки, опыт и тд. """
     photo = models.FileField(upload_to='about/')
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
@@ -21,6 +22,7 @@ class About(models.Model):
 
 
 class Contact(models.Model):
+    """ Модель для создания контактной информации о платформе """
     location = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
     link_telegram = models.URLField()
@@ -28,6 +30,7 @@ class Contact(models.Model):
 
 
 class Feedback(models.Model):
+    """ Модель формы фидбека """
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     email_or_phone = models.CharField(max_length=100, default='')
