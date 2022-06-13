@@ -3,6 +3,7 @@ from .models import Feedback
 
 
 class FeedbackForm(forms.ModelForm):
+    """ Форма фидбека """
     class Meta:
         model = Feedback
         exclude = ['create_at']
