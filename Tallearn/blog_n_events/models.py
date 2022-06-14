@@ -3,6 +3,7 @@ from django.urls import reverse
 
 
 class Category(models.Model):
+    """Модель категорий постов"""
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     image = models.ImageField(upload_to='category_blog_articles/')
@@ -17,6 +18,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    """Модель постов"""
     title = models.CharField(max_length=50)
     description = models.TextField()
     create_at = models.DateTimeField(auto_now_add=True)
@@ -32,15 +34,19 @@ class Post(models.Model):
         ordering = ['create_at']
 
     def get_absolute_url(self):
+        """Слаг поста"""
         return reverse('post_detail', kwargs={'slug': self.category.slug, 'post_slug': self.slug})
 
     def get_category_name(self):
+        """Отображение имени конкретной категории"""
         return self.category.name
 
     def get_category_slug(self):
+        """Отображение слага конкретной категории"""
         return self.post.slug
 
 class Event(models.Model):
+    """МОдель события"""
     title = models.CharField(max_length=50)
     description = models.TextField()
     create_at = models.DateTimeField()
@@ -55,5 +61,6 @@ class Event(models.Model):
         ordering = ['-create_at']
 
     def get_absolute_url(self):
+        """Возврат слага события """
         return reverse('event_detail', kwargs={'event_slug': self.slug})
 
