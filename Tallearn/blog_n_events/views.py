@@ -6,6 +6,7 @@ from about.models import Contact
 
 
 class CategoryListView(ListView):
+    """Представление отображения категорий постов"""
     model = Category
     context_object_name = 'blog_category_list'
 
@@ -20,6 +21,7 @@ class CategoryListView(ListView):
 
 
 class PostListView(ListView):
+    """Представление отображения самих постов"""
     model = Post
 
     def get_queryset(self):
@@ -33,6 +35,7 @@ class PostListView(ListView):
 
 
 class PostDetailView(DetailView):
+    """Представление отображения деталей поста"""
     model = Post
     context_object_name = 'post'
     slug_url_kwarg = 'post_slug'
@@ -46,6 +49,7 @@ class PostDetailView(DetailView):
 
 
 class EventListView(ListView):
+    """Представление отображения мероприятий"""
     model = Event
 
     def get_queryset(self):
@@ -59,6 +63,7 @@ class EventListView(ListView):
 
 
 class EventDetailView(DetailView):
+    """Представление отображения деталей мероприятия"""
     model = Event
     context_object_name = 'event'
     slug_url_kwarg = 'event_slug'
