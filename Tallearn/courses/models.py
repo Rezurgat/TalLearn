@@ -4,6 +4,7 @@ from django.utils import timezone
 
 
 class Category(models.Model):
+    """Модель категории курсов"""
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     image = models.ImageField(upload_to='category_articles/')
@@ -17,10 +18,12 @@ class Category(models.Model):
         ordering = ['name']
 
     def get_category_url(self):
+        """Метод для получения корректного url категории"""
         return reverse('course_list', kwargs={'slug': self.category.slug})
 
 
 class Course(models.Model):
+    """Модель курсов"""
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     image = models.ImageField(upload_to='course_articles/')
@@ -35,19 +38,24 @@ class Course(models.Model):
         ordering = ['create_at']
 
     def get_absolute_url(self):
+        """Метод для корректного отображения url курса"""
         return reverse('course_detail', kwargs={'slug': self.category.slug, 'course_slug': self.slug})
 
     def get_comments(self):
+        """Метод получения комментария"""
         return self.comment.all()
 
     def get_category_name(self):
+        """Метод для получения и отображения имени категории в course_detail"""
         return self.category.name
 
     def get_category_slug(self):
+        """Метод для получения и отображения url категории в course_detail"""
         return self.category.slug
 
 
 class Comment(models.Model):
+    """Модель комментариев"""
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50, null=True, blank=True)
