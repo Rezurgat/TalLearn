@@ -9,11 +9,13 @@ from blog_n_events.models import Event, Post
 
 
 class HomeView(ListView):
+    """Представление для отображения главной страницы"""
     context_object_name = 'home_list'
     model = Category
     template_name = 'courses/home.html'
 
     def get_context_data(self, **kwargs):
+        """Добавление контекстов других приложений"""
         context = super(HomeView, self).get_context_data(**kwargs)
         context['about'] = About.objects.all()
         context['event'] = Event.objects.order_by('-create_at')[0:3]
@@ -25,6 +27,7 @@ class HomeView(ListView):
 
 
 class CategoryListView(ListView):
+    """Представление для отображения списка категорий курсов"""
     model = Category
 
     def get_queryset(self):
@@ -38,6 +41,7 @@ class CategoryListView(ListView):
 
 
 class CourseListView(ListView):
+    """Представление для отображения списка курсов"""
     model = Course
 
     def get_queryset(self):
@@ -50,6 +54,7 @@ class CourseListView(ListView):
         return context
 
 class CourseDetailView(DetailView):
+    """Представление для отображения детальной информации о курсе """
     model = Course
     context_object_name = 'course'
     slug_url_kwarg = 'course_slug'
@@ -65,6 +70,7 @@ class CourseDetailView(DetailView):
 
 
 class CreateComment(CreateView):
+    """Представление для создание комментариев по форме"""
     model = Comment
     form_class = CommentForm
 
