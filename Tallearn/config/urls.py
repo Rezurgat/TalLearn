@@ -5,10 +5,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('about.urls')),
     path('', include('courses.urls')),
     path('', include('blog_n_events.urls')),
+    path('', include('api.urls')),
 ]
 
 if settings.DEBUG:

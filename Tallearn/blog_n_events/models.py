@@ -46,7 +46,7 @@ class Post(models.Model):
         return self.post.slug
 
 class Event(models.Model):
-    """МОдель события"""
+    """Модель события"""
     title = models.CharField(max_length=50)
     description = models.TextField()
     create_at = models.DateTimeField()
@@ -61,6 +61,6 @@ class Event(models.Model):
         ordering = ['-create_at']
 
     def get_absolute_url(self):
-        """Возврат слага события """
+        """Возврат слага события"""
         return reverse('event_detail', kwargs={'event_slug': self.slug})
 
