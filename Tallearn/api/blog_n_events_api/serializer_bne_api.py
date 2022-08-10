@@ -11,7 +11,7 @@ class СategoryPostSerializer(serializers.ModelSerializer):
 class BlogPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('title', 'description', 'create_at', 'author', 'category')
+        fields = ('id','title', 'description', 'create_at', 'author', 'category')
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:

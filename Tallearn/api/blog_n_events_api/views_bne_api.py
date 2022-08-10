@@ -7,8 +7,11 @@ class CategoryPostApiView(generics.ListAPIView):
     serializer_class = СategoryPostSerializer
 
 class BlogPostApiView(generics.ListAPIView):
-    queryset = Post.objects.all()
     serializer_class = BlogPostSerializer
+
+    def get_queryset(self):
+        category = self.kwargs['category']
+        return Post.objects.filter(category=category)
 
 class EventApiView(generics.ListAPIView):
     queryset = Event.objects.all()
