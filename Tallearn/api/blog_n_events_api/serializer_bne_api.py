@@ -2,18 +2,25 @@ from rest_framework import serializers
 from blog_n_events.models import Post, Category, Event
 
 
-class СategoryPostSerializer(serializers.ModelSerializer):
+class СategoryPostListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('name', 'description', 'create_at',)
+        fields = ('id', 'name', 'description', 'create_at',)
 
 
-class BlogPostSerializer(serializers.ModelSerializer):
+class PostListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id','title', 'description', 'create_at', 'author', 'category')
+        fields = ('id', 'title', 'description', 'create_at', 'author', 'category')
 
-class EventSerializer(serializers.ModelSerializer):
+
+class PostDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = '__all__'
+
+
+class EventListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('title', 'description', 'create_at', 'author')
+        fields = ('id', 'title', 'description', 'create_at', 'author')
