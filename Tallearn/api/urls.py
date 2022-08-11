@@ -9,8 +9,8 @@ from api.about_api.views_about_api import AboutApiView, ContactApiView
 
 urlpatterns = [
     path('api/v1/categorypostlist', CategoryPostListApiView.as_view()),
-    path('api/v1/postlist', PostListApiView.as_view()),
-    path('api/v1/postdetail/<int:category>', PostDetailApiView.as_view()),
+    path('api/v1/postlist/<int:category>', PostListApiView.as_view()),
+    path('api/v1/postdetail/<int:pk>', PostDetailApiView.as_view()),
     path('api/v1/eventlist', EventListApiView.as_view()),
 
     path('api/v1/aboutlist', AboutApiView.as_view()),
