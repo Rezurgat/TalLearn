@@ -24,3 +24,9 @@ class EventListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = ('id', 'title', 'description', 'create_at', 'author')
+
+
+class EventDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Event
+        fields = '__all__'

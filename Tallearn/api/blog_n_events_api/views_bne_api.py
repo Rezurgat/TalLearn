@@ -1,10 +1,11 @@
 from rest_framework import generics
 from blog_n_events.models import Post, Category, Event
 from api.blog_n_events_api.serializer_bne_api import (
+    СategoryPostListSerializer,
     PostListSerializer,
     PostDetailSerializer,
-    СategoryPostListSerializer,
     EventListSerializer,
+    EventDetailSerializer,
 )
 
 
@@ -29,5 +30,10 @@ class PostDetailApiView(generics.RetrieveAPIView):
 class EventListApiView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventListSerializer
+
+
+class EventDetailApiView(generics.RetrieveAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventDetailSerializer
 
 
