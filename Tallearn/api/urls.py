@@ -10,7 +10,9 @@ from api.about_api.views_about_api import (
     AboutApiView,
     ContactApiView,
     FeedbackCreateApiView,
-
+)
+from api.courses_api.views_courses_api import (
+    CategoryCourseListApiView,
 )
 
 urlpatterns = [
@@ -24,6 +26,8 @@ urlpatterns = [
     path('api/v1/aboutlist', AboutApiView.as_view()),
     path('api/v1/contactlist', ContactApiView.as_view()),
     path('api/v1/feedback', FeedbackCreateApiView.as_view()),
+
+    path('api/v1/categorycourselist', CategoryCourseListApiView.as_view())
 
 
 
