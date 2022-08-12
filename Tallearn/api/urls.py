@@ -6,7 +6,12 @@ from api.blog_n_events_api.views_bne_api import (
     EventListApiView,
     EventDetailApiView,
 )
-from api.about_api.views_about_api import AboutApiView, ContactApiView
+from api.about_api.views_about_api import (
+    AboutApiView,
+    ContactApiView,
+    FeedbackCreateApiView,
+
+)
 
 urlpatterns = [
     path('api/v1/categorypostlist', CategoryPostListApiView.as_view()),
@@ -18,6 +23,7 @@ urlpatterns = [
 
     path('api/v1/aboutlist', AboutApiView.as_view()),
     path('api/v1/contactlist', ContactApiView.as_view()),
+    path('api/v1/feedback', FeedbackCreateApiView.as_view()),
 
 
 
