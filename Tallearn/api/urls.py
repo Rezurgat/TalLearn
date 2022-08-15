@@ -15,7 +15,9 @@ from api.courses_api.views_courses_api import (
     CategoryCourseListApiView,
     CourseListApiView,
     CourseDetailApiView,
+    CommentCreateApiView,
 )
+
 
 urlpatterns = [
     path('api/v1/categorypostlist', CategoryPostListApiView.as_view()),
@@ -31,8 +33,5 @@ urlpatterns = [
     path('api/v1/categorycourselist', CategoryCourseListApiView.as_view()),
     path('api/v1/courselist/<int:category>', CourseListApiView.as_view()),
     path('api/v1/coursedetail/<int:pk>', CourseDetailApiView.as_view()),
-
-
-
-
+    path('api/v1/comment', CommentCreateApiView.as_view())
 ]

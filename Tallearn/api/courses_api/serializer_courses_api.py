@@ -14,7 +14,17 @@ class CourseListSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'slug', 'description', 'create_at', 'category')
 
 
+class CommentCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = '__all__'
+
+
 class CourseDetailSerializer(serializers.ModelSerializer):
+    comment = CommentCreateSerializer(many=True)
+
     class Meta:
         model = Course
         fields = '__all__'
+
+
