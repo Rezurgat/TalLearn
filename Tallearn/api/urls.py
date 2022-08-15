@@ -13,6 +13,8 @@ from api.about_api.views_about_api import (
 )
 from api.courses_api.views_courses_api import (
     CategoryCourseListApiView,
+    CourseListApiView,
+    CourseDetailApiView,
 )
 
 urlpatterns = [
@@ -22,12 +24,14 @@ urlpatterns = [
     path('api/v1/eventlist', EventListApiView.as_view()),
     path('api/v1/eventdetail/<int:pk>', EventDetailApiView.as_view()),
 
-
     path('api/v1/aboutlist', AboutApiView.as_view()),
     path('api/v1/contactlist', ContactApiView.as_view()),
     path('api/v1/feedback', FeedbackCreateApiView.as_view()),
 
-    path('api/v1/categorycourselist', CategoryCourseListApiView.as_view())
+    path('api/v1/categorycourselist', CategoryCourseListApiView.as_view()),
+    path('api/v1/courselist/<int:category>', CourseListApiView.as_view()),
+    path('api/v1/coursedetail/<int:pk>', CourseDetailApiView.as_view()),
+
 
 
 
