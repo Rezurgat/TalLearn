@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    volumes:
+      - /usr/src/Tallearn
+    ports:
+      - 8000:8000
+    image: tallearn
+    container_name: docker_platform
+    command: python3 manage.py runserver 0.0.0.0:8000
