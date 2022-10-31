@@ -51,3 +51,4 @@ Tallearn- это платформа, которая позволяет преп�
 
 
 
+Ссылка на документацию -- https://drive.google.com/drive/u/1/folders/1fMeGRKHOMLdqQjEtANBasrRj0RU8amH-
